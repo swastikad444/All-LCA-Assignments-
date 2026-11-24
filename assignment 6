@@ -1,1 +1,36 @@
+Without recursion
+#include <stdio.h>
 
+int fact_loop(int n) {
+    int f = 1, i;
+    for (i = 1; i <= n; i++)
+        f = f * i;
+    return f;
+}
+
+int main() {
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    printf("Factorial of number = %d\n", fact_loop(num));
+    return 0;
+}
+
+With recursion
+#include <stdio.h>
+
+int fact_rec(int n) {
+    if (n == 0)
+        return 1;
+    return n * fact_rec(n - 1);
+}
+
+int main() {
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    printf("Factorial of number = %d\n", fact_rec(num));
+    return 0;
+}
